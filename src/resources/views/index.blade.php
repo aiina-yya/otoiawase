@@ -63,8 +63,8 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="tel1" placeholder="080" old />
-                    <input type="text" name="tel2" placeholder="1234" old />
+                    <input type="text" name="tel1" placeholder="080" old />-
+                    <input type="text" name="tel2" placeholder="1234" old />-
                     <input type="text" name="tel3" placeholder="5678" old />
                 </div>
                 <div class="form__error">
