@@ -1,4 +1,4 @@
-extends('layouts.app')
+@extends('layouts.app')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/contact/index.css') }}">
@@ -9,7 +9,8 @@ extends('layouts.app')
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="">
+    <form class="form" action="contact/confirm" method="post">
+        @csrf
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">お名前</span>
@@ -17,11 +18,18 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="last_name" placeholder="例：山田" old />
-                    <input type="text" name="first_name" placeholder="例：太郎" old />
+                    <input type="text" name="last_name" placeholder="例：山田" value="{{ old('last_name') }}" />
+                    <div class="form__error">
+                        @error('last_name')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <input type="text" name="first_name" placeholder="例：太郎" value="{{ old('first_name') }}" />
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('first_name')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -38,7 +46,9 @@ extends('layouts.app')
                     <!--labelでくくるべき？-->
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('gender')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -49,10 +59,12 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" placeholder="例：test@example.com" old/>
+                    <input type="email" name="email" placeholder="例：test@example.com" value="{{ old('email') }}"/>
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('email')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -63,12 +75,14 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="tel1" placeholder="080" old />-
-                    <input type="text" name="tel2" placeholder="1234" old />-
-                    <input type="text" name="tel3" placeholder="5678" old />
+                    <input type="text" name="tel1" placeholder="080" value="{{ old('tel1') }}" />-
+                    <input type="text" name="tel2" placeholder="1234" value="{{ old('tel2') }}" />-
+                    <input type="text" name="tel3" placeholder="5678" value="{{ old('tel3') }}" />
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('tel')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -79,10 +93,12 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" old/>
+                    <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}"/>
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('address')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -92,10 +108,7 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" old/>
-                </div>
-                <div class="form__error">
-                    <!--バリデーション-->
+                    <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('building') }}" />
                 </div>
             </div>
         </div>
@@ -106,7 +119,7 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--select">
-                    <select class="contact-form__select" name="contact_type">
+                    <select class="form__select" name="contact_type">
                         <option value="">選択してください</option>
                         <option value="1">商品のお届けについて</option>
                         <option value="2">商品の交換について</option>
@@ -115,7 +128,9 @@ extends('layouts.app')
                     </select>
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('contact_type')
+                        {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -126,10 +141,13 @@ extends('layouts.app')
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                <textarea name="content" placeholder="お問い合わせ内容をご記載ください"></textarea>
+                <textarea name="content" placeholder="お問い合わせ内容をご記載ください" value="{{ old('content') }}"></textarea>
                 </div>
                 <div class="form__error">
-                    <!--バリデーション-->
+                    @error('content')
+                        {{ $message }}
+                    @enderror
+                </div>
                 </div>
             </div>
         </div>

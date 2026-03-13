@@ -6,3 +6,5 @@
 
 git@github.com:aiina-yya/otoiawase.git
 docker-compose up -d --build
+
+![alt text](index.drawio.png)
