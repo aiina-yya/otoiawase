@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="contact/confirm" method="post">
+    <form class="form" action="/confirm" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -80,7 +80,17 @@
                     <input type="text" name="tel3" placeholder="5678" value="{{ old('tel3') }}" />
                 </div>
                 <div class="form__error">
-                    @error('tel')
+                    @error('tel1')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="form__error">
+                    @error('tel2')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="form__error">
+                    @error('tel3')
                         {{ $message }}
                     @enderror
                 </div>

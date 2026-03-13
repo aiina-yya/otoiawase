@@ -57,7 +57,6 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <!--{{ $contact['contact_type'] }}-->
                         <input  class="confirm-table__input" type="text" name="contact_type" value="{{ $contact['contact_type'] }}" readonly />
                         <!--<input type="hidden" name="contact_type" value="{{$contact['contact_type'] }}-->
                     </td>
