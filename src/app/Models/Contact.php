@@ -11,12 +11,19 @@ class Contact extends Model
     protected $fillable = [
         'last_name',
         'first_name',
+        'category_id',
         'gender',
         'email',
         'tel',
         'address',
         'building',
         'contact_type',
-        'content'
+        'detail'
     ];
+    
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    
 }

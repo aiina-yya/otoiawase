@@ -17,14 +17,15 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'category_id' => $this->faker->numberBetween(1,5),
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
             'gender' => $this->faker->numberBetween(1,3),
             'email' => $this->faker->safeEmail(),
             'tel' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
             'building' => $this->faker->secondaryAddress(),
-            'contact_type' => $this->faker->numberBetween(1,4),
-            'content' => $this->faker->realText(100),
+            'detail' => $this->faker->realText(100),
         ];
     }
 }
