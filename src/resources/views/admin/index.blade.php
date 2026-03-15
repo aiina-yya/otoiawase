@@ -9,13 +9,38 @@
         @if (Auth::check())
         <form class="logout_form" action="/logout" method="post"></form>
         @csrf
-        <button class="header__nav-button">logout</button>
+        <a class="header__nav-link"href="/login">logout</a>
         </form>
         @endif
     </nav>
 @endsection
 
 @section('content')
+<div class="admin__content">
+    <div class="admin__heading">
+        <h2>Confirm</h2>
+    </div>
+    <form class="search-form" action="/search">
+        <div class="search-form__item">
+            <input class="search-form__input" type="text" name="last_name,first_name" placeholder="名前やメールアドレスを入力してください" />
+            
+            <select class="search-form__select" name="gender">
+                <option value="">性別</option>
+            </select>
+            
+            <select class="search-form__select" name="{{ $contact->category->name }}">
+                <option value="">お問い合わせの種類</option>
+            </select>
+
+            <input type="date" name="name">
+
+            <button type="submit">検索</button>
+
+            <button type="submit">リセット</button>
+
+        </div>
+
+    </form>
 <table class="contact-table">
 
     <tr class="contact-table__header">
