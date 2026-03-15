@@ -15,7 +15,8 @@ extends('layouts.app')
         <div class="login-form__heading">
             <h2>Login</h2>
         </div>
-        <form class="form" action="">
+        <form class="form" action="/login" method="post">
+            @csrf
             <div class="form__group">
                 <div class="form__group-title">
                     <span class="form__label--item">メールアドレス</span>

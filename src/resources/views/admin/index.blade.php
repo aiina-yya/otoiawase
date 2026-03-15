@@ -6,7 +6,11 @@ extends('layouts.app')
 
 @section('nav')
     <nav class="header__nav">
-        <a class="header__nav-link" href="/logout">logout</a>
+        @if (Auth::check())
+        <form action="/logout" method="post"></form>
+        <button class="header__nav-button">logout</button>
+        </form>
+        @endif
     </nav>
 @endsection
 

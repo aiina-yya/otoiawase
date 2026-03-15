@@ -15,7 +15,8 @@ extends('layouts.app')
         <div class="register-form--heading">
             <h2>Register</h2>
         </div>
-        <form class="form" action="">
+        <form class="form" action="/register" method="post">
+            @csrf
             <div class="form__group">
                 <div class="form__group-title">
                     <span class="form__label--item">お名前</span>
