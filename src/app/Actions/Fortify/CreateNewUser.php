@@ -20,15 +20,15 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => [
-                'required',
-                'string',
-                'email',
-                'max:255',
-                Rule::unique(User::class),
-            ],
-            'password' => $this->passwordRules(),
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ],
+        [
+            'name.required' => '名前を入力してください',
+            'email.required' => 'メールアドレスを入力してください',
+            'email.email' => 'メールアドレスはメール形式で入力してください',
+            'password.required' => 'パスワードを入力してください',
         ])->validate();
 
         return User::create([

@@ -7,7 +7,8 @@
 @section('nav')
     <nav class="header__nav">
         @if (Auth::check())
-        <form action="/logout" method="post"></form>
+        <form class="logout_form" action="/logout" method="post"></form>
+        @csrf
         <button class="header__nav-button">logout</button>
         </form>
         @endif
@@ -44,7 +45,7 @@
         </td>
 
         <td class="contact-table__item">
-        {{ $contact->contact_type }}
+        {{ $contact->category->name }}
         </td>
 
         <td class="contact-table__item">
@@ -58,7 +59,7 @@
 <div id="modal-{{ $contact->id }}" class="modal">
     <div class="modal__content">
         <a href="#" class="modal__close"></a>
-        < class="modal-table">
+        <table class="modal-table">
             <tr>
                 <th>名前</th>
                     <td>{{ $contact->last_name }} {{ $contact->first_name }}
@@ -100,12 +101,12 @@
                     <td>{{ $contact->message }}</td>
             </tr>
 
-    <form class="modal-delete-form" action="{{ route('admin.destroy',$contact->id) }}" method="POST">
+    <form class="modal-delete-form" action="{{ route('admin.destroy', $contact->id) }}" method="POST">
     @csrf
     @method('DELETE')
         <button class="delete-button" type="submit">削除</button>
     </form>
-
+        </table>
     </div>
 </div>
 @endforeach
