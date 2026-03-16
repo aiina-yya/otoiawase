@@ -15,7 +15,9 @@
             <div class="thanks__heading">
                 <h2>お問い合わせありがとうございました</h2>
             </div>
-            <button class="form-button__home">HOME</button>
+            <div class="thanks_button">
+                <a class="thanks__button-link" href="/">HOME</a>
+            </div>
         </div>
     </main>
 </body>

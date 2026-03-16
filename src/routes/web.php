@@ -26,11 +26,12 @@ Route::get('/login', function () {
 Route::middleware('auth')->group(function(){
     Route::get('/admin', [AuthController::class, 'admin']);
 });
-Route::get('/logout', function () {
+Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
-    Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::delete('/delete', [AdminController::class, 'destroy']);
+    Route::get('/search', [AdminController::class, 'search'] );
 });
