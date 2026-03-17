@@ -1,0 +1,214 @@
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.header__nav-link {
+    border: 1px solid #8B7969;
+    padding: 5px 15px;
+    color: #8B7969;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.header__nav-link:hover {
+    background-color: #8B7969;
+    color: #fff;
+}
+
+main {
+    background-color: #fdf8f2;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+
+/* =========================
+   全体
+========================= */
+.admin__content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* タイトル */
+.admin__heading {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #82756A;
+}
+
+
+/* =========================
+   検索フォーム
+========================= */
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form__item {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-form__input,
+.search-form__select,
+.search-form_date {
+    padding: 8px;
+    background-color: #eae8e8;
+    border: 1px solid #ddd;
+    color: #82756A;
+}
+
+
+/* ボタン */
+.search-form_submit {
+    padding: 8px 20px;
+    background-color: #82756A;
+    color: #fff;
+    border: none;
+}
+
+.form-reset_link {
+    padding: 8px 20px;
+    background-color: #ddd;
+    color: #82756A;
+    text-decoration: none;
+}
+
+
+/* =========================
+   ページネーション（←重要）
+========================= */
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    border: 1px solid #82756A;
+    padding: 5px 10px;
+    margin: 0 3px;
+    color: #82756A;
+    text-decoration: none;
+}
+
+/* 現在ページ */
+.pagination .active {
+    background-color: #82756A;
+    color: #fff;
+}
+
+
+/* =========================
+   テーブル
+========================= */
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* th（authと統一カラー） */
+.contact-table__header th {
+    background-color: #82756A;
+    color: #fff;
+    padding: 12px;
+}
+
+
+/* td */
+.contact-table__item {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #82756A;
+}
+
+
+/* hover */
+.contact-table__row:hover {
+    background-color: #f9f9f9;
+}
+
+
+/* 詳細ボタン */
+.detail-button {
+    padding: 5px 10px;
+    border: 1px solid #82756A;
+    color: #82756A;
+    text-decoration: none;
+}
+
+
+/* =========================
+   モーダル
+========================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+/* 表示 */
+.modal:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* モーダル中身 */
+.modal__content {
+    background-color: #fff;
+    /* ←指定通り */
+    padding: 30px;
+    width: 500px;
+}
+
+
+/* 閉じる */
+.modal__close {
+    float: right;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+
+/* テーブル */
+.modal-table th {
+    text-align: left;
+    padding: 5px;
+    color: #82756A;
+}
+
+.modal-table td {
+    padding: 5px;
+}
+
+
+/* =========================
+削除ボタン
+========================= */
+.delete-button {
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: red;
+    /* ←指定通り */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

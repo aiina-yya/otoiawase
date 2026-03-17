@@ -57,6 +57,10 @@
         </div>
     </form>
 
+    <div class="pagination">
+    {{ $contacts->links() }}
+</div>
+
 <table class="contact-table">
 
     <tr class="contact-table__header">
@@ -158,9 +162,5 @@
 </div>
 @endforeach
 </table>
-
-<div class="pagination">
-    {{ $contacts->links() }}
-</div>
 
 @endsection

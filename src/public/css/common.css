@@ -1,0 +1,24 @@
+.header {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+
+}
+
+
+.header__inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+
+.header__logo {
+    position: absolute;
+    left: 40%;
+    font-size: 30px;
+    text-decoration: none;
+    color: #82756A;
+    font-weight: bold;
+
+}

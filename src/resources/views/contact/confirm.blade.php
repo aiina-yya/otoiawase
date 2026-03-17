@@ -89,7 +89,7 @@
                 </tr>
             </table>
             <button class="form__button-submit" type="submit">送信</button>
-            <button type="button" onclick="history.back()">修正</button>
+            <button class="form__button-back" type="button" onclick="history.back()">修正</button>
         </div>
     </form>
 </div>
