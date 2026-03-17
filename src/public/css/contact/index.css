@@ -1,0 +1,134 @@
+
+.contact-form__content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+
+.contact-form__heading {
+    text-align: center;
+    margin: 40px 0;
+    color:#82756A;
+}
+
+
+.form {
+    width: 100%;
+}
+
+
+
+.form__group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+
+.form__group-title {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    color: #82756A;
+}
+
+
+
+.form__label--required {
+    color: red;
+    margin-left: 5px;
+}
+
+
+
+.form__group-content {
+    width: 70%;
+    color: #82756A;
+}
+
+
+
+.form__input--text input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #eae8e8;
+    color: #82756A;
+}
+
+
+
+.form__input--text {
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    justify-content: space-between;
+}
+
+
+
+.form__input--radio input {
+    margin-right: 5px;
+    color: #82756A;
+}
+
+
+
+.form__select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #eae8e8;
+    color: #82756A;
+}
+
+
+
+.form__input--textarea textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #eae8e8;
+    color: #82756A;
+}
+
+
+
+.form__input--text input[name="tel1"],
+.form__input--text input[name="tel2"],
+.form__input--text input[name="tel3"] {
+    width: 30%;
+    display: inline-block;
+    color: #82756A;
+}
+
+
+
+.form__error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+
+.form__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px 40px;
+    background-color: #82756A;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.form__button-submit:hover {
+    opacity: 0.8;
+}
