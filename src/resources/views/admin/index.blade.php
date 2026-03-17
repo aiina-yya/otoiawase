@@ -100,6 +100,12 @@
         </td>
     </tr>
 
+    @endforeach
+
+</table>
+
+@foreach($contacts as $contact)
+
 <div id="modal-{{ $contact->id }}" class="modal">
     <div class="modal__content">
         <a href="#" class="modal__close">×</a>
@@ -126,7 +132,7 @@
 
             <tr>
                 <th>電話番号</th>
-                <td>{{ $contact->tel }}</td>
+                <td>{{ $contact->tel1 }}-{{ $contact->tel2 }}-{{ $contact->tel3 }}</td>
             </tr>
 
             <tr>
@@ -148,19 +154,15 @@
                 <th>お問い合わせ内容</th>
                 <td>{{ $contact->detail }}</td>
             </tr>
-
-    <form class="delete-form" action="/delete" method="POST">
-    @csrf
-    @method('DELETE')
-        <div class="delete-form__button">
-            <input type="hidden" name="id" value="{{ $contact['id'] }}">
-            <button class="delete-form__button-submit" type="submit">削除</button>
-        </div>
-    </form>
         </table>
+
+        <form class="delete-form" action="/delete/{{ $contact->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+            <button class="delete-form__button-submit" type="submit">削除</button>
+        </form>
     </div>
 </div>
 @endforeach
-</table>
 
 @endsection

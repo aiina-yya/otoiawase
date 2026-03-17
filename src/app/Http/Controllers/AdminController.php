@@ -10,7 +10,8 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
-        $contacts = Contact::keywordSearch($request->keyword)
+        $contacts = Contact::with('category')
+        ->keywordSearch($request->keyword)
         ->genderSearch($request->gender)
         ->categorySearch($request->category_id)
         ->dateSearch($request->date)
@@ -21,9 +22,9 @@ class AdminController extends Controller
         return view('admin.index',compact('contacts','categories'));
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        Contact::find($request->id)->delete();
+        Contact::findOrFail($id)->delete();
         return redirect('/admin');
 
     }
